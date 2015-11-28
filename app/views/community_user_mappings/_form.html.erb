@@ -1,0 +1,25 @@
+<%= form_for(@community_user_mapping) do |f| %>
+  <% if @community_user_mapping.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@community_user_mapping.errors.count, "error") %> prohibited this community_user_mapping from being saved:</h2>
+
+      <ul>
+      <% @community_user_mapping.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :userId %><br>
+    <%= f.text_field :userId %>
+  </div>
+  <div class="field">
+    <%= f.label :communityId %><br>
+    <%= f.text_field :communityId %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

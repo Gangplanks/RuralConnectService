@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Community User Mappings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Communityid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @community_user_mappings.each do |community_user_mapping| %>
+      <tr>
+        <td><%= community_user_mapping.userId %></td>
+        <td><%= community_user_mapping.communityId %></td>
+        <td><%= link_to 'Show', community_user_mapping %></td>
+        <td><%= link_to 'Edit', edit_community_user_mapping_path(community_user_mapping) %></td>
+        <td><%= link_to 'Destroy', community_user_mapping, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Community user mapping', new_community_user_mapping_path %>

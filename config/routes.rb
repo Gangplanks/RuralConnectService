@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :community_user_mappings
+  resources :communities
   resources :community_posts
   resources :reviews
   resources :user_scheme_favorites
