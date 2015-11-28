@@ -1,6 +1,4 @@
 class ReviewsController < ApplicationController
-  belongs_to :user
-  belongs_to :scheme
   before_action :set_review, only: [:show, :edit, :update, :destroy]
 
   # GET /reviews
