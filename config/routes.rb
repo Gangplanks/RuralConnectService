@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :community_questions
   resources :categories
   resources :community_user_mappings
   resources :communities

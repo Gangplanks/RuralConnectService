@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @community_question.userId %>
+</p>
+
+<p>
+  <strong>Communityid:</strong>
+  <%= @community_question.communityId %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @community_question.question %>
+</p>
+
+<%= link_to 'Edit', edit_community_question_path(@community_question) %> |
+<%= link_to 'Back', community_questions_path %>
