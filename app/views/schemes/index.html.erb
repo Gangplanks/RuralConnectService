@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Schemes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Beneficiaries</th>
+      <th>Funding pattern</th>
+      <th>Jurisdiction</th>
+      <th>Age eligible</th>
+      <th>Income eligible</th>
+      <th>Community eligible</th>
+      <th>Others eligible</th>
+      <th>Avail from</th>
+      <th>Valid from</th>
+      <th>Valid till</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schemes.each do |scheme| %>
+      <tr>
+        <td><%= scheme.name %></td>
+        <td><%= scheme.department %></td>
+        <td><%= scheme.beneficiaries %></td>
+        <td><%= scheme.funding_pattern %></td>
+        <td><%= scheme.jurisdiction %></td>
+        <td><%= scheme.age_eligible %></td>
+        <td><%= scheme.income_eligible %></td>
+        <td><%= scheme.community_eligible %></td>
+        <td><%= scheme.others_eligible %></td>
+        <td><%= scheme.avail_from %></td>
+        <td><%= scheme.valid_from %></td>
+        <td><%= scheme.valid_till %></td>
+        <td><%= scheme.description %></td>
+        <td><%= link_to 'Show', scheme %></td>
+        <td><%= link_to 'Edit', edit_scheme_path(scheme) %></td>
+        <td><%= link_to 'Destroy', scheme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Scheme', new_scheme_path %>

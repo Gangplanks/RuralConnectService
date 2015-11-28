@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  department: MyString
+  beneficiaries: MyString
+  funding_pattern: MyString
+  jurisdiction: MyString
+  age_eligible: MyString
+  income_eligible: MyString
+  community_eligible: MyString
+  others_eligible: MyString
+  avail_from: MyString
+  valid_from: MyString
+  valid_till: MyString
+  description: MyString
+
+two:
+  name: MyString
+  department: MyString
+  beneficiaries: MyString
+  funding_pattern: MyString
+  jurisdiction: MyString
+  age_eligible: MyString
+  income_eligible: MyString
+  community_eligible: MyString
+  others_eligible: MyString
+  avail_from: MyString
+  valid_from: MyString
+  valid_till: MyString
+  description: MyString

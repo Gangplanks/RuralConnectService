@@ -1,0 +1,69 @@
+<%= form_for(@scheme) do |f| %>
+  <% if @scheme.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@scheme.errors.count, "error") %> prohibited this scheme from being saved:</h2>
+
+      <ul>
+      <% @scheme.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :department %><br>
+    <%= f.text_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label :beneficiaries %><br>
+    <%= f.text_field :beneficiaries %>
+  </div>
+  <div class="field">
+    <%= f.label :funding_pattern %><br>
+    <%= f.text_field :funding_pattern %>
+  </div>
+  <div class="field">
+    <%= f.label :jurisdiction %><br>
+    <%= f.text_field :jurisdiction %>
+  </div>
+  <div class="field">
+    <%= f.label :age_eligible %><br>
+    <%= f.text_field :age_eligible %>
+  </div>
+  <div class="field">
+    <%= f.label :income_eligible %><br>
+    <%= f.text_field :income_eligible %>
+  </div>
+  <div class="field">
+    <%= f.label :community_eligible %><br>
+    <%= f.text_field :community_eligible %>
+  </div>
+  <div class="field">
+    <%= f.label :others_eligible %><br>
+    <%= f.text_field :others_eligible %>
+  </div>
+  <div class="field">
+    <%= f.label :avail_from %><br>
+    <%= f.text_field :avail_from %>
+  </div>
+  <div class="field">
+    <%= f.label :valid_from %><br>
+    <%= f.text_field :valid_from %>
+  </div>
+  <div class="field">
+    <%= f.label :valid_till %><br>
+    <%= f.text_field :valid_till %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @scheme.name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @scheme.department %>
+</p>
+
+<p>
+  <strong>Beneficiaries:</strong>
+  <%= @scheme.beneficiaries %>
+</p>
+
+<p>
+  <strong>Funding pattern:</strong>
+  <%= @scheme.funding_pattern %>
+</p>
+
+<p>
+  <strong>Jurisdiction:</strong>
+  <%= @scheme.jurisdiction %>
+</p>
+
+<p>
+  <strong>Age eligible:</strong>
+  <%= @scheme.age_eligible %>
+</p>
+
+<p>
+  <strong>Income eligible:</strong>
+  <%= @scheme.income_eligible %>
+</p>
+
+<p>
+  <strong>Community eligible:</strong>
+  <%= @scheme.community_eligible %>
+</p>
+
+<p>
+  <strong>Others eligible:</strong>
+  <%= @scheme.others_eligible %>
+</p>
+
+<p>
+  <strong>Avail from:</strong>
+  <%= @scheme.avail_from %>
+</p>
+
+<p>
+  <strong>Valid from:</strong>
+  <%= @scheme.valid_from %>
+</p>
+
+<p>
+  <strong>Valid till:</strong>
+  <%= @scheme.valid_till %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @scheme.description %>
+</p>
+
+<%= link_to 'Edit', edit_scheme_path(@scheme) %> |
+<%= link_to 'Back', schemes_path %>
