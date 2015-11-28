@@ -4,8 +4,8 @@ class Scheme < ActiveRecord::Base
 		occupation_matched_schemes = Scheme.where(beneficiaries: params[:beneficiaries])
 		age_matched_schemes = filter_by_age(occupation_matched_schemes, params[:age_eligible])
 		income_macthed_schemes = filter_by_income(age_matched_schemes, params[:income_eligible])
-		matched_schemes = filter_by_community(income_macthed_schemes, params[:community_eligible])
-		matched_schemes
+		community_matched_schemes = filter_by_community(income_macthed_schemes, params[:community_eligible])
+		matched_schemes = build_schemes_response(community_matched_schemes)
 	end
 
 	def self.fetch_by_category(params)
@@ -46,5 +46,15 @@ class Scheme < ActiveRecord::Base
 			end
 		end
 		community_macthed_schemes
+	end
+
+	def self.build_schemes_response(schemes)
+		matched_schemes = Array.new
+		schemes.each do |scheme|
+			category = Category.where(name: scheme.beneficiaries)
+			matched_scheme = {id: scheme.id, name: scheme.name, icon: category[0][:image_name]}
+			matched_schemes.push(matched_scheme)
+		end
+		matched_schemes
 	end
 end
