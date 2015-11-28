@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :schemes
 
   post 'schemes/filter' => 'schemes#filter'
+  post 'schemes/fetch_by_category' => 'schemes#fetch_by_category'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -8,6 +8,15 @@ class Scheme < ActiveRecord::Base
 		matched_schemes
 	end
 
+	def self.fetch_by_category(params)
+		scheme_names = Array.new
+		schemes = Scheme.where(beneficiaries: params[:beneficiaries])
+		schemes.each do |scheme|
+			scheme_names.push(scheme.name)
+		end
+		scheme_names.join(". ")
+	end
+
 	private
 	def self.filter_by_age(schemes, age)
 		age_matched_schemes = Array.new

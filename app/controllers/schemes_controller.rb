@@ -67,6 +67,11 @@ class SchemesController < ApplicationController
     render json: @schemes
   end
 
+  def fetch_by_category
+    @scheme_names_string = Scheme.fetch_by_category(scheme_params)
+    render json: {scheme_names: @scheme_names_string}
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_scheme
