@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :reviews
+  resources :user_scheme_favorites
+  resources :ratings
+  resources :users
   resources :schemes
 
   # The priority is based upon order of creation: first created -> highest priority.

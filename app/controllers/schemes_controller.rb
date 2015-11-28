@@ -1,4 +1,6 @@
 class SchemesController < ApplicationController
+  belongs_to :user
+  belongs_to :scheme
   before_action :set_scheme, only: [:show, :edit, :update, :destroy]
 
   # GET /schemes

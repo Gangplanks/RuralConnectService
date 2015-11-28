@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151128021507) do
+ActiveRecord::Schema.define(version: 20151128031611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "scheme_id"
+    t.integer  "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "scheme_id"
+    t.string   "type"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "schemes", force: :cascade do |t|
     t.string   "name"
@@ -52,4 +69,29 @@ ActiveRecord::Schema.define(version: 20151128021507) do
     t.datetime "updated_at",         null: false
   end
 
+  create_table "user_scheme_favorites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "scheme_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "password"
+    t.string   "age"
+    t.string   "income"
+    t.string   "community"
+    t.string   "occupation"
+    t.string   "state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "ratings", "schemes"
+  add_foreign_key "ratings", "users"
+  add_foreign_key "reviews", "schemes"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "user_scheme_favorites", "schemes"
+  add_foreign_key "user_scheme_favorites", "users"
 end
