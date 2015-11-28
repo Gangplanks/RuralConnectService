@@ -1,5 +1,6 @@
 class SchemesController < ApplicationController
   before_action :set_scheme, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token  
 
   # GET /schemes
   # GET /schemes.json
@@ -61,6 +62,11 @@ class SchemesController < ApplicationController
     end
   end
 
+  def filter
+    @schemes = Scheme.filter(scheme_params)
+    render json: @schemes
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_scheme
@@ -69,6 +75,6 @@ class SchemesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scheme_params
-      params.require(:scheme).permit(:name, :department, :beneficiaries, :funding_pattern, :jurisdiction, :age_eligible, :income_eligible, :community_eligible, :others_eligible, :avail_from, :valid_from, :valid_till, :description)
+      params.permit(:name, :department, :beneficiaries, :funding_pattern, :jurisdiction, :age_eligible, :income_eligible, :community_eligible, :others_eligible, :avail_from, :valid_from, :valid_till, :description)
     end
 end
