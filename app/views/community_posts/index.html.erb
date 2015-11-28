@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Community Posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Community</th>
+      <th>Type</th>
+      <th>Content</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @community_posts.each do |community_post| %>
+      <tr>
+        <td><%= community_post.user_id %></td>
+        <td><%= community_post.community_id %></td>
+        <td><%= community_post.type %></td>
+        <td><%= community_post.content %></td>
+        <td><%= link_to 'Show', community_post %></td>
+        <td><%= link_to 'Edit', edit_community_post_path(community_post) %></td>
+        <td><%= link_to 'Destroy', community_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Community post', new_community_post_path %>

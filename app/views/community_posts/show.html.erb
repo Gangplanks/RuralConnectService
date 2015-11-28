@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @community_post.user_id %>
+</p>
+
+<p>
+  <strong>Community:</strong>
+  <%= @community_post.community_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @community_post.type %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @community_post.content %>
+</p>
+
+<%= link_to 'Edit', edit_community_post_path(@community_post) %> |
+<%= link_to 'Back', community_posts_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  community_id: 1
+  type: 
+  content: 
+
+two:
+  user_id: 1
+  community_id: 1
+  type: 
+  content: 
